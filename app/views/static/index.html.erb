@@ -10,10 +10,15 @@ non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <%= Time.now %>
 
-class StaticController < ApplicationController
-  def index
-    @some_variable = 123
-  end
-end
+
 
 <h1><%= @some_variable %></h1>
+
+<%= @students %>
+<ul>
+<% @students.each do |student| %>
+  <%= link_to student do %>
+    <li><%= student.name %> <%= student.index %></li>
+  <% end %>
+<% end %>
+</ul>
